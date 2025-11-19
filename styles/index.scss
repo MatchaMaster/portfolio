@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/edwardianscriptitc.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    #wrap {
+        padding: 50px 220px;
+        #mainpage {
+            .year_name {
+                
+                font-size: 30px;
+                display: flex;
+                justify-content: space-between;
+                p {font-family: "Libre Caslon Display", serif;
+                    color: #990011;}
+            }
+
+            .title {
+                display: flex;
+                align-items: center;
+                margin: 100px 0 120px;
+                .mysweet {
+                    color: #FF9291;
+                    font-family:"DM Serif Display", serif;
+                    font-size: 70px;
+                }
+                .slogan {
+                    
+                }
+                h1 {
+                    text-align: right;
+                    em { 
+                    color: #990011;
+                    font-family: 'MyFont', sans-serif;
+                    font-size: 480px;}
+                }
+            }
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 80px;
+                .btn {
+                    position: relative;
+                    text-align: center;
+                    .cake {
+                        position: absolute;
+                        top: -40px; // 버튼 위에 배치
+                        left: 50%;
+                        transform: translateX(-50%);
+                        transition: transform 0.3s ease;
+                        pointer-events: none; // hover 충돌 방지
+                    }
+                    button {
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                        padding: 12px 36px;
+                        border: none;
+                        border-radius: 12px;
+                        background: rgba(255, 255, 255, 0.6);
+                        backdrop-filter: blur(8px);
+                        font-size: 18px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    }
+                    &:hover .cake {
+                        transform: translateX(-50%) translateY(-25px); // 위로 콩 튐
+                    }
+                    &:hover button {
+                        color: #fff;
+                        background-color: #990011;
+                    }
+                }
+            }
+        }
+    }
+}
