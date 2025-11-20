@@ -10,42 +10,48 @@ body {
     #wrap {
         padding: 50px 220px;
         #mainpage {
+            padding: 0 0 50px;
             .year_name {
-                
                 font-size: 30px;
                 display: flex;
                 justify-content: space-between;
-                p {font-family: "Libre Caslon Display", serif;
-                    color: #990011;}
+                p {
+                    font-family: "Libre Caslon Display", serif;
+                    color: #990011;
+                }
             }
-
             .title {
                 display: flex;
                 align-items: center;
                 margin: 100px 0 120px;
-                .mysweet {
-                    color: #FF9291;
-                    font-family:"DM Serif Display", serif;
-                    font-size: 70px;
+                .sub_title {
+                    .mysweet {
+                        color: #FF9291;
+                        font-family: "DM Serif Display", serif;
+                        font-size: 70px;
+                    }
                 }
-                .slogan {
-                    
-                }
-                h1 {
-                    text-align: right;
-                    em { 
-                    color: #990011;
-                    font-family: 'MyFont', sans-serif;
-                    font-size: 480px;}
+                .main {
+                    .slogan {}
+                    h1 {
+                        text-align: right;
+                        em {
+                            color: #990011;
+                            font-family: 'MyFont', sans-serif;
+                            font-size: 480px;
+                        }
+                    }
                 }
             }
             .buttons {
                 display: flex;
                 justify-content: center;
                 gap: 80px;
+
                 .btn {
                     position: relative;
                     text-align: center;
+
                     .cake {
                         position: absolute;
                         top: -40px; // 버튼 위에 배치
@@ -55,6 +61,7 @@ body {
                         pointer-events: none; // hover 충돌 방지
                     }
                     button {
+                        color: #990011;
                         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                         padding: 12px 36px;
                         border: none;
@@ -62,8 +69,8 @@ body {
                         background: rgba(255, 255, 255, 0.6);
                         backdrop-filter: blur(8px);
                         font-size: 18px;
-                    cursor: pointer;
-                    transition: 0.3s;
+                        cursor: pointer;
+                        transition: 0.3s;
                     }
                     &:hover .cake {
                         transform: translateX(-50%) translateY(-25px); // 위로 콩 튐
@@ -74,6 +81,331 @@ body {
                     }
                 }
             }
+        }//mainpage
+        #profile {
+            margin: 100px 0;
+            .section_name {
+                padding: 50px 0;
+                h2 {           
+                    font-family: "DM Serif Display", serif;
+                    font-style: italic;
+                    font-size: 30px;
+                    color: #990011;
+                    display: inline-block;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 1.5px;
+                    background: #b40000;
+                    margin: 4px 0;
+                }
+            }
+            .content {
+                padding: 0 30px;
+                display: flex;
+                gap: 300px;
+                .profile_wrap {
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    .personality {
+                        align-self: center;
+                        span {color: #990011;
+                            background-color: #FEC9D1;
+                            padding: 5px 10px;
+                            font-size: 12px;
+                            border-radius: 50px;
+                        }
+                    }
+                    .pro_photo_intro {
+                        display: flex;
+                        flex-direction: column; // wrap 제거
+                        gap: 5px;
+                        .born {
+                            font-size: 12px;
+                        }
+                        .name {
+                            font-size: 24px;
+                        }
+                        .en_name {
+                            font-size: 18px;
+                        }
+                    }
+                    .introduce  {
+                        p {
+                            color: #990011;
+                            font-size: 22px;
+                            font-weight: 500;
+                        }
+                    }
+                    .contact {
+                        display: flex;
+                        flex-direction: column; // wrap 제거
+                        gap: 20px;
+                    }
+                    p {
+                        display: flex;
+                        align-items: center;
+                        gap: 7px;   // 원하는 간격 설정 (6px~10px 권장)
+                    }
+                }
+                dt.details {
+                    font-size: 28px;
+                    font-weight: 500;
+                    color: #990011;
+                }
+                dd.row {
+                    font-size: 18px;
+                }
+                .details_wrap {
+                    display: flex;
+                    padding: 40px 0;
+                    gap:230px;
+                    dl {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                    }
+                    dt + dd {
+                        margin-top: 20px;
+                    }
+                    .first {
+                        display: flex;
+                        flex-flow: column;
+                        justify-content: space-between;
+                        .edu {
+                            gap: 15px;
+                            dd {}
+                        }
+                        .experience {
+                            dd {}
+                        }
+                        .license {}
+                    }
+                    .second {
+                        display: flex;
+                        flex-flow: column;
+                        gap: 65px;
+                        .row {
+                            display: flex;
+                            align-items: center;
+                        } 
+                        .row .label {
+                            display: inline-block;
+                            width: 120px; /* ← 이거로 텍스트 길이와 상관없이 이미지 위치 고정 */
+                        }                        
+                        .hobby {
+                        }
+                    }
+                }
+            }
+        }//#profile
+        #skills {
+            padding-top: 80px;
+        
+            /* -----------------------------------
+                기본 스타일
+            ----------------------------------- */
+            .skills_slogan p {
+                font-size: 95px;
+                font-family: "DM Serif Display", serif;
+                text-align: center;
+                color: #990011;
+            }
+        
+            /* 초기 숨김 상태 (모든 요소 공통) */
+            .skills_slogan,
+            .plate,
+            .fork,
+            .knife,
+            .skill-icons img {
+                opacity: 0;
+                transform: translateY(80px);
+                transition: 0.8s ease;
+            }
+            .skill-icons img.show {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        
+            /* -----------------------------------
+                ACTIVE 애니메이션 단계별
+            ----------------------------------- */
+            &.active {
+                /* 1) 슬로건 */
+                .skills_slogan {
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition-delay: 0s;
+                }
+        
+                /* 2) 접시 */
+                .plate {
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition-delay: 0.3s;
+                }
+        
+                /* 3) 포크 & 나이프 */
+                .fork,
+                .knife {
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition-delay: 0.6s;
+                }
+        
+                /* 4) 아이콘 개별 지연 + 등장 */
+                .skill-icons img {
+                    opacity: 1;             // ★ 필수
+                    transform: translateY(0);
+                }
+        
+                /* 개별 딜레이 */
+                .ai     { transition-delay: 0.8s; }
+                .ps     { transition-delay: 0.95s; }
+                .css    { transition-delay: 1.1s; }
+        
+                .html   { transition-delay: 1.25s; }
+                .figma  { transition-delay: 1.4s; }
+                .js     { transition-delay: 1.55s; }
+        
+                .notion { transition-delay: 1.7s; }
+                .excel  { transition-delay: 1.85s; }
+                .github { transition-delay: 2s; }
+                .spread { transition-delay: 2.15s; }
+            }
+        
+            /* -----------------------------------
+                    위치 설정
+            ----------------------------------- */
+            .yummy {
+                position: relative;
+                width: fit-content;
+                margin: 0 auto;
+                .plate {
+                    display: block;
+                }
+                .fork,
+                .knife {
+                    position: absolute;
+                    top: 100px;
+                    display: block;
+                }
+                .fork  { left: 200px; }
+                .knife { right: 50px; }
+                .skill-icons {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 300px;
+                    height: 300px;
+                }
+                /* 아이콘 공통 스타일 */
+                .skill-icons img {
+                    position: absolute;
+                    object-fit: contain;
+                    width: 60px;
+                    height: 60px;
+                }
+        
+                /* 개별 위치 (네가 준 값 그대로 유지) */
+                .ai     { top: 16%; left: -5%; }
+                .ps     { top: -10%; left: 18%; }
+                .css    { top: -4%; left: 65%; }
+        
+                .html   { top: 48%; left: 12%; }
+                .figma  { top: 42%; left: 40%; }
+                .js     { top: 32%; left: 80%; }
+        
+                .notion { top: 75%; left: 4%; }
+                .github { top: 83%; left: 50%; }
+                .excel  { top: 13%; left: 43%; }
+                .spread { top: 63%; left: 80%; }
+            }
+        }
+        #webdesign {
+            .section_name {
+                h2 {           
+                    font-family: "DM Serif Display", serif;
+                    font-style: italic;
+                    font-size: 30px;
+                    color: #990011;
+                    display: inline-block;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: #b40000;
+                    margin: 4px 0;
+                }
+            }
+            /* 프로젝트 네비 */
+            .project_nav {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                margin-top: 20px;
+                .project_link {
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: #b5b5b5;     // 비활성
+                    font-weight: 400;
+                    transition: 0.2s;
+                    &:hover {
+                        color: #888;
+                    }
+                    &.active {
+                        color: #111;    // 활성
+                        font-weight: 700;
+                    }
+                }
+            }
+            .info_wrap {
+                display: flex;
+                justify-content: space-between;
+                .info_first {
+                    .web_title { }
+                    .web_info {
+                        .web_info_name { }
+                    }
+                }
+                .info_second {
+                    .mockup {
+                        img { }
+                    .buttons {
+                        display: flex;
+                        justify-content: center;
+                        gap: 80px;
+                        .btn {
+                            position: relative;
+                            text-align: center;
+                            button {
+                                color: #990011;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                                padding: 12px 36px;
+                                border: none;
+                                border-radius: 12px;
+                                background: rgba(255, 255, 255, 0.6);
+                                backdrop-filter: blur(8px);
+                                font-size: 18px;
+                                cursor: pointer;
+                                transition: 0.3s;
+                            }
+                            &:hover button {
+                                color: #fff;
+                                background-color: #990011;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+}
 }

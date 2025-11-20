@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "MyFont";
   src: url("/fonts/edwardianscriptitc.ttf") format("truetype");
@@ -9,6 +10,9 @@ body {
 }
 body #wrap {
   padding: 50px 220px;
+}
+body #wrap #mainpage {
+  padding: 0 0 50px;
 }
 body #wrap #mainpage .year_name {
   font-size: 30px;
@@ -24,15 +28,15 @@ body #wrap #mainpage .title {
   align-items: center;
   margin: 100px 0 120px;
 }
-body #wrap #mainpage .title .mysweet {
+body #wrap #mainpage .title .sub_title .mysweet {
   color: #FF9291;
   font-family: "DM Serif Display", serif;
   font-size: 70px;
 }
-body #wrap #mainpage .title h1 {
+body #wrap #mainpage .title .main h1 {
   text-align: right;
 }
-body #wrap #mainpage .title h1 em {
+body #wrap #mainpage .title .main h1 em {
   color: #990011;
   font-family: "MyFont", sans-serif;
   font-size: 480px;
@@ -55,6 +59,7 @@ body #wrap #mainpage .buttons .btn .cake {
   pointer-events: none;
 }
 body #wrap #mainpage .buttons .btn button {
+  color: #990011;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 12px 36px;
   border: none;
@@ -69,6 +74,369 @@ body #wrap #mainpage .buttons .btn:hover .cake {
   transform: translateX(-50%) translateY(-25px);
 }
 body #wrap #mainpage .buttons .btn:hover button {
+  color: #fff;
+  background-color: #990011;
+}
+body #wrap #profile {
+  margin: 100px 0;
+}
+body #wrap #profile .section_name {
+  padding: 50px 0;
+}
+body #wrap #profile .section_name h2 {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #990011;
+  display: inline-block;
+}
+body #wrap #profile .section_name::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: #b40000;
+  margin: 4px 0;
+}
+body #wrap #profile .content {
+  padding: 0 30px;
+  display: flex;
+  gap: 300px;
+}
+body #wrap #profile .content .profile_wrap {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+body #wrap #profile .content .profile_wrap .personality {
+  align-self: center;
+}
+body #wrap #profile .content .profile_wrap .personality span {
+  color: #990011;
+  background-color: #FEC9D1;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 50px;
+}
+body #wrap #profile .content .profile_wrap .pro_photo_intro {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body #wrap #profile .content .profile_wrap .pro_photo_intro .born {
+  font-size: 12px;
+}
+body #wrap #profile .content .profile_wrap .pro_photo_intro .name {
+  font-size: 24px;
+}
+body #wrap #profile .content .profile_wrap .pro_photo_intro .en_name {
+  font-size: 18px;
+}
+body #wrap #profile .content .profile_wrap .introduce p {
+  color: #990011;
+  font-size: 22px;
+  font-weight: 500;
+}
+body #wrap #profile .content .profile_wrap .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body #wrap #profile .content .profile_wrap p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+body #wrap #profile .content dt.details {
+  font-size: 28px;
+  font-weight: 500;
+  color: #990011;
+}
+body #wrap #profile .content dd.row {
+  font-size: 18px;
+}
+body #wrap #profile .content .details_wrap {
+  display: flex;
+  padding: 40px 0;
+  gap: 230px;
+}
+body #wrap #profile .content .details_wrap dl {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+body #wrap #profile .content .details_wrap dt + dd {
+  margin-top: 20px;
+}
+body #wrap #profile .content .details_wrap .first {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+body #wrap #profile .content .details_wrap .first .edu {
+  gap: 15px;
+}
+body #wrap #profile .content .details_wrap .second {
+  display: flex;
+  flex-flow: column;
+  gap: 65px;
+}
+body #wrap #profile .content .details_wrap .second .row {
+  display: flex;
+  align-items: center;
+}
+body #wrap #profile .content .details_wrap .second .row .label {
+  display: inline-block;
+  width: 120px; /* ← 이거로 텍스트 길이와 상관없이 이미지 위치 고정 */
+}
+body #wrap #skills {
+  padding-top: 80px;
+  /* -----------------------------------
+      기본 스타일
+  ----------------------------------- */
+}
+body #wrap #skills .skills_slogan p {
+  font-size: 95px;
+  font-family: "DM Serif Display", serif;
+  text-align: center;
+  color: #990011;
+}
+body #wrap #skills {
+  /* 초기 숨김 상태 (모든 요소 공통) */
+}
+body #wrap #skills .skills_slogan,
+body #wrap #skills .plate,
+body #wrap #skills .fork,
+body #wrap #skills .knife,
+body #wrap #skills .skill-icons img {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 0.8s ease;
+}
+body #wrap #skills .skill-icons img.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+body #wrap #skills {
+  /* -----------------------------------
+      ACTIVE 애니메이션 단계별
+  ----------------------------------- */
+}
+body #wrap #skills.active {
+  /* 1) 슬로건 */
+}
+body #wrap #skills.active .skills_slogan {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+body #wrap #skills.active {
+  /* 2) 접시 */
+}
+body #wrap #skills.active .plate {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+body #wrap #skills.active {
+  /* 3) 포크 & 나이프 */
+}
+body #wrap #skills.active .fork,
+body #wrap #skills.active .knife {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+body #wrap #skills.active {
+  /* 4) 아이콘 개별 지연 + 등장 */
+}
+body #wrap #skills.active .skill-icons img {
+  opacity: 1;
+  transform: translateY(0);
+}
+body #wrap #skills.active {
+  /* 개별 딜레이 */
+}
+body #wrap #skills.active .ai {
+  transition-delay: 0.8s;
+}
+body #wrap #skills.active .ps {
+  transition-delay: 0.95s;
+}
+body #wrap #skills.active .css {
+  transition-delay: 1.1s;
+}
+body #wrap #skills.active .html {
+  transition-delay: 1.25s;
+}
+body #wrap #skills.active .figma {
+  transition-delay: 1.4s;
+}
+body #wrap #skills.active .js {
+  transition-delay: 1.55s;
+}
+body #wrap #skills.active .notion {
+  transition-delay: 1.7s;
+}
+body #wrap #skills.active .excel {
+  transition-delay: 1.85s;
+}
+body #wrap #skills.active .github {
+  transition-delay: 2s;
+}
+body #wrap #skills.active .spread {
+  transition-delay: 2.15s;
+}
+body #wrap #skills {
+  /* -----------------------------------
+          위치 설정
+  ----------------------------------- */
+}
+body #wrap #skills .yummy {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+body #wrap #skills .yummy .plate {
+  display: block;
+}
+body #wrap #skills .yummy .fork,
+body #wrap #skills .yummy .knife {
+  position: absolute;
+  top: 100px;
+  display: block;
+}
+body #wrap #skills .yummy .fork {
+  left: 200px;
+}
+body #wrap #skills .yummy .knife {
+  right: 50px;
+}
+body #wrap #skills .yummy .skill-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+}
+body #wrap #skills .yummy {
+  /* 아이콘 공통 스타일 */
+}
+body #wrap #skills .yummy .skill-icons img {
+  position: absolute;
+  object-fit: contain;
+  width: 60px;
+  height: 60px;
+}
+body #wrap #skills .yummy {
+  /* 개별 위치 (네가 준 값 그대로 유지) */
+}
+body #wrap #skills .yummy .ai {
+  top: 16%;
+  left: -5%;
+}
+body #wrap #skills .yummy .ps {
+  top: -10%;
+  left: 18%;
+}
+body #wrap #skills .yummy .css {
+  top: -4%;
+  left: 65%;
+}
+body #wrap #skills .yummy .html {
+  top: 48%;
+  left: 12%;
+}
+body #wrap #skills .yummy .figma {
+  top: 42%;
+  left: 40%;
+}
+body #wrap #skills .yummy .js {
+  top: 32%;
+  left: 80%;
+}
+body #wrap #skills .yummy .notion {
+  top: 75%;
+  left: 4%;
+}
+body #wrap #skills .yummy .github {
+  top: 83%;
+  left: 50%;
+}
+body #wrap #skills .yummy .excel {
+  top: 13%;
+  left: 43%;
+}
+body #wrap #skills .yummy .spread {
+  top: 63%;
+  left: 80%;
+}
+body #wrap #webdesign .section_name h2 {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #990011;
+  display: inline-block;
+}
+body #wrap #webdesign .section_name::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #b40000;
+  margin: 4px 0;
+}
+body #wrap #webdesign {
+  /* 프로젝트 네비 */
+}
+body #wrap #webdesign .project_nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+}
+body #wrap #webdesign .project_nav .project_link {
+  text-decoration: none;
+  font-size: 14px;
+  color: #b5b5b5;
+  font-weight: 400;
+  transition: 0.2s;
+}
+body #wrap #webdesign .project_nav .project_link:hover {
+  color: #888;
+}
+body #wrap #webdesign .project_nav .project_link.active {
+  color: #111;
+  font-weight: 700;
+}
+body #wrap #webdesign .info_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+body #wrap #webdesign .info_wrap .info_second .mockup .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+body #wrap #webdesign .info_wrap .info_second .mockup .buttons .btn {
+  position: relative;
+  text-align: center;
+}
+body #wrap #webdesign .info_wrap .info_second .mockup .buttons .btn button {
+  color: #990011;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px 36px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+body #wrap #webdesign .info_wrap .info_second .mockup .buttons .btn:hover button {
   color: #fff;
   background-color: #990011;
 }
