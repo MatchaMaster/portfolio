@@ -29,17 +29,31 @@ body #wrap #mainpage .title {
   margin: 100px 0 120px;
 }
 body #wrap #mainpage .title .sub_title .mysweet {
+  opacity: 0;
+  animation: fadeUp 0.8s forwards 0s;
   color: #FF9291;
   font-family: "DM Serif Display", serif;
   font-size: 70px;
 }
 body #wrap #mainpage .title .main h1 {
+  opacity: 0;
+  animation: fadeUp 0.8s forwards 0.5s;
   text-align: right;
 }
 body #wrap #mainpage .title .main h1 em {
   color: #990011;
   font-family: "MyFont", sans-serif;
   font-size: 480px;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 body #wrap #mainpage .buttons {
   display: flex;
@@ -104,7 +118,6 @@ body #wrap #profile .content {
   gap: 300px;
 }
 body #wrap #profile .content .profile_wrap {
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -134,8 +147,9 @@ body #wrap #profile .content .profile_wrap .pro_photo_intro .en_name {
   font-size: 18px;
 }
 body #wrap #profile .content .profile_wrap .introduce p {
+  text-align: center;
   color: #990011;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 500;
 }
 body #wrap #profile .content .profile_wrap .contact {
@@ -180,7 +194,7 @@ body #wrap #profile .content .details_wrap .first .edu {
 body #wrap #profile .content .details_wrap .second {
   display: flex;
   flex-flow: column;
-  gap: 65px;
+  gap: 93px;
 }
 body #wrap #profile .content .details_wrap .second .row {
   display: flex;
@@ -373,7 +387,14 @@ body #wrap #skills .yummy .spread {
   top: 63%;
   left: 80%;
 }
+body #wrap #webdesign {
+  position: relative;
+}
+body #wrap #webdesign .section_name {
+  padding: 50px 0 0;
+}
 body #wrap #webdesign .section_name h2 {
+  margin-top: 100px;
   font-family: "DM Serif Display", serif;
   font-style: italic;
   font-size: 30px;
@@ -392,9 +413,12 @@ body #wrap #webdesign {
   /* 프로젝트 네비 */
 }
 body #wrap #webdesign .project_nav {
+  position: fixed;
+  top: 250px;
+  left: 50px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 25px;
   margin-top: 20px;
 }
 body #wrap #webdesign .project_nav .project_link {
@@ -412,19 +436,53 @@ body #wrap #webdesign .project_nav .project_link.active {
   font-weight: 700;
 }
 body #wrap #webdesign .info_wrap {
+  margin-top: 70px;
   display: flex;
   justify-content: space-between;
 }
-body #wrap #webdesign .info_wrap .info_second .mockup .buttons {
+body #wrap #webdesign .info_wrap .info_first .web_title {
+  font-family: "DM Serif Display", serif;
+  font-size: 70px;
+}
+body #wrap #webdesign .info_wrap .info_first .web_title::after {
+  content: "";
+  display: block;
+  width: 495px;
+  height: 1.5px;
+  background: #1c1b1f;
+  margin: 4px 0;
+}
+body #wrap #webdesign .info_wrap .info_first .web_info {
+  display: flex;
+  flex-flow: column;
+  gap: 65px;
+  margin-top: 60px;
+}
+body #wrap #webdesign .info_wrap .info_first .web_info dl {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+body #wrap #webdesign .info_wrap .info_first .web_info .web_info_name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #990011;
+}
+body #wrap #webdesign .info_wrap .info_second {
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+}
+body #wrap #webdesign .info_wrap .info_second .buttons {
   display: flex;
   justify-content: center;
   gap: 80px;
 }
-body #wrap #webdesign .info_wrap .info_second .mockup .buttons .btn {
+body #wrap #webdesign .info_wrap .info_second .buttons .btn {
   position: relative;
   text-align: center;
 }
-body #wrap #webdesign .info_wrap .info_second .mockup .buttons .btn button {
+body #wrap #webdesign .info_wrap .info_second .buttons .btn button {
   color: #990011;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 12px 36px;
@@ -436,9 +494,133 @@ body #wrap #webdesign .info_wrap .info_second .mockup .buttons .btn button {
   cursor: pointer;
   transition: 0.3s;
 }
-body #wrap #webdesign .info_wrap .info_second .mockup .buttons .btn:hover button {
+body #wrap #webdesign .info_wrap .info_second .buttons .btn:hover button {
   color: #fff;
   background-color: #990011;
+}
+body #wrap #webdesign .other_sec {
+  margin-top: 200px;
+}
+body #wrap #others {
+  padding-top: 100px;
+}
+body #wrap #others .section_name {
+  padding: 50px 0 0;
+}
+body #wrap #others .section_name h2 {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #990011;
+  display: inline-block;
+}
+body #wrap #others .section_name::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #b40000;
+  margin: 4px 0;
+}
+body #wrap #others .scroll_frame {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 70px;
+}
+body #wrap #others .row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+body #wrap #others .row img {
+  width: 260px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+body #wrap #others {
+  /* 🟥 윗줄 오른쪽 흐름 */
+}
+body #wrap #others .row-top {
+  animation: slideRight 25s linear infinite;
+}
+body #wrap #others {
+  /* 🟦 아랫줄 왼쪽 흐름 */
+}
+body #wrap #others .row-bottom {
+  animation: slideLeft 25s linear infinite;
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+body #footer {
+  padding: 50px;
+  width: 100%;
+  height: 493px;
+  background-color: #990011;
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+  gap: 25px;
+}
+body #footer .mysweet {
+  color: #FEC9D1;
+  font-family: "DM Serif Display", serif;
+  font-size: 70px;
+}
+body #footer p {
+  color: #fff;
+  font-size: 20px;
+}
+body #footer .contact {
+  margin-top: 50px;
+  gap: 20px;
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+}
+body #footer .contact .icon {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  gap: 10px;
+}
+body #topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background-color: #990011;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+body {
+  /* hover 효과 */
+}
+body #topBtn:hover {
+  background-color: #cc0015;
+  transform: translateY(-5px);
 }
 
 /*# sourceMappingURL=index.css.map */

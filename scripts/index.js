@@ -93,5 +93,92 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth"
         });
     });
+    document.querySelector(".btn.projects button").addEventListener("click", () => {
+        document.querySelector("#webdesign").scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+    document.querySelector(".btn.others button").addEventListener("click", () => {
+        document.querySelector("#others").scrollIntoView({
+            behavior: "smooth"
+        });
+    });
 
 });
+/* nav자연스러운 스크롤 */
+document.querySelectorAll('#webdesign .project_link').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        
+        const top = target.getBoundingClientRect().top + window.scrollY - 150;  
+        // 150px 위 여백 (원하는 값으로 조절 가능)
+
+        window.scrollTo({
+            top: top,
+            behavior: 'smooth'
+        });
+    });
+});
+/* nav색깔 활성화 */
+const sections = document.querySelectorAll('#webdesign .info_wrap');
+const navLinks = document.querySelectorAll('#webdesign .project_link');
+
+window.addEventListener('scroll', () => {
+    let current = "";
+    let minDistance = Infinity;  
+
+    sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        const distance = Math.abs(rect.top - 200); // 200px 위여백 감안
+        
+        if (distance < minDistance) {
+            minDistance = distance;
+            current = sec.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+/* 다른페이지에서 nav가 안보이기 오직 웹페이지에서만 작동 */
+const webSection = document.querySelector('#webdesign');
+const nav = document.querySelector('#webdesign .project_nav');
+
+function checkNavVisible() {
+    const rect = webSection.getBoundingClientRect();
+    
+    if(rect.top <= 100 && rect.bottom >= 300){
+        nav.style.display = 'flex';
+    } else {
+        nav.style.display = 'none';
+    }
+}
+
+window.addEventListener('scroll', checkNavVisible);
+window.addEventListener('load', checkNavVisible);  // ★ 새로고침 즉시 실행
+
+
+const topBtn = document.getElementById('topBtn');
+
+topBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+document.querySelectorAll('.btn[data-link]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const link = btn.getAttribute('data-link');
+        if (link) window.open(link, "_blank");
+    });
+});
+
+
+
+
