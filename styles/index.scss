@@ -425,7 +425,14 @@ body {
                     flex-flow: column;
                     gap: 30px;
                     .mockup {
+                        position: relative;
                         img { }
+                        .iphone {
+                            position: absolute; 
+                            bottom: 20px;          /* 원하는 만큼 아래로 내리기 */
+                            left: 70%;
+                            img {}
+                        }
                     }
                     .buttons {
                         display: flex;

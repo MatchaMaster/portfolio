@@ -473,6 +473,14 @@ body #wrap #webdesign .info_wrap .info_second {
   flex-flow: column;
   gap: 30px;
 }
+body #wrap #webdesign .info_wrap .info_second .mockup {
+  position: relative;
+}
+body #wrap #webdesign .info_wrap .info_second .mockup .iphone {
+  position: absolute;
+  bottom: 20px; /* 원하는 만큼 아래로 내리기 */
+  left: 70%;
+}
 body #wrap #webdesign .info_wrap .info_second .buttons {
   display: flex;
   justify-content: center;
