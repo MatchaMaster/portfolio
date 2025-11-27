@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "MyFont";
-  src: url("/fonts/edwardianscriptitc.ttf") format("truetype");
+  src: url("../fonts/edwardianscriptitc.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
