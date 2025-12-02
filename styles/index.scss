@@ -184,7 +184,7 @@ body {
                         gap: 15px;
                     }
                     dt + dd {
-                        margin-top: 20px;
+                        
                     }
                     .first {
                         display: flex;
@@ -195,7 +195,12 @@ body {
                             dd {}
                         }
                         .experience {
-                            dd {}
+                            dd {
+                                line-height: 140%;
+                                em {
+                                    font-weight: 500;
+                                }
+                            }
                         }
                         .license {}
                     }

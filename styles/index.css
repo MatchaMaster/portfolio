@@ -180,9 +180,6 @@ body #wrap #profile .content .details_wrap dl {
   flex-direction: column;
   gap: 15px;
 }
-body #wrap #profile .content .details_wrap dt + dd {
-  margin-top: 20px;
-}
 body #wrap #profile .content .details_wrap .first {
   display: flex;
   flex-flow: column;
@@ -190,6 +187,12 @@ body #wrap #profile .content .details_wrap .first {
 }
 body #wrap #profile .content .details_wrap .first .edu {
   gap: 15px;
+}
+body #wrap #profile .content .details_wrap .first .experience dd {
+  line-height: 140%;
+}
+body #wrap #profile .content .details_wrap .first .experience dd em {
+  font-weight: 500;
 }
 body #wrap #profile .content .details_wrap .second {
   display: flex;
