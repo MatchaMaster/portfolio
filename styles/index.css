@@ -577,6 +577,41 @@ body #wrap #others .row-bottom {
     transform: translateX(-50%);
   }
 }
+body #wrap {
+  /* 🔥 이미지 오버레이 전체 박스 */
+}
+body #wrap .img_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  /* 🔥 여기서 세로 최대 높이 + 스크롤 담당 */
+}
+body #wrap .img_overlay .overlay_content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+body #wrap .img_overlay .overlay_content img {
+  display: block;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 10px;
+}
+body #wrap {
+  /* 보일 때 쓸 클래스 */
+}
+body #wrap .img_overlay.on {
+  display: flex;
+}
+body #wrap {
+  /* 클릭 가능 느낌 주기 */
+}
+body #wrap #others .row img {
+  cursor: pointer;
+}
 body #footer {
   padding: 50px;
   width: 100%;

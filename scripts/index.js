@@ -178,6 +178,39 @@ document.querySelectorAll('.btn[data-link]').forEach(btn => {
         if (link) window.open(link, "_blank");
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.querySelector('.img_overlay');
+    const overlayImg = document.getElementById('overlayImg');
+
+    // #others 안의 모든 이미지
+    const imgs = document.querySelectorAll('#others img');
+
+    imgs.forEach(img => {
+        img.addEventListener('click', function (e) {
+            // a 태그로 감싸진 경우, 페이지 이동 막기
+            e.preventDefault();
+            const link = img.closest('a');
+            let src = '';
+
+            // a 태그가 있으면 href(원본 이미지) 사용
+            if (link && link.getAttribute('href')) {
+                src = link.getAttribute('href');
+            } else {
+                // 아니면 그냥 img.src 사용
+                src = img.src;
+            }
+
+            overlayImg.src = src;
+            overlay.classList.add('on'); // 오버레이 보이게
+        });
+    });
+
+    // 배경 아무 곳이나 클릭하면 닫기
+    overlay.addEventListener('click', function () {
+        overlay.classList.remove('on');
+        overlayImg.src = '';
+    });
+});
 
 
 

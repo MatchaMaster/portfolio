@@ -531,6 +531,39 @@ body {
                 100% { transform: translateX(-50%); }
             }
         }//others
+        /* 🔥 이미지 오버레이 전체 박스 */
+        .img_overlay {
+            position: fixed;
+            inset: 0; // top:0; right:0; bottom:0; left:0
+            background: rgba(0, 0, 0, 0.5); // 반투명 검정 배경
+            display: none; // 기본은 숨김
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+
+            /* 🔥 여기서 세로 최대 높이 + 스크롤 담당 */
+            .overlay_content {
+            max-height: 90vh;   // 화면 세로의 90%까지만 보이게
+            overflow-y: auto;   // 넘치면 안에서 스크롤
+            }
+
+            .overlay_content img {
+            display: block;
+            max-width: 90vw;    // 화면 가로의 90%까지만
+            height: auto;       // 비율 유지, 세로는 줄이지 않음
+            border-radius: 10px;
+            }
+        }
+        
+        /* 보일 때 쓸 클래스 */
+        .img_overlay.on {
+            display: flex;
+        }
+        
+        /* 클릭 가능 느낌 주기 */
+        #others .row img {
+            cursor: pointer;
+        }
     }
     #footer {
         padding:50px;
