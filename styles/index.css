@@ -545,21 +545,19 @@ body #wrap #others .row {
 }
 body #wrap #others .row img {
   width: 260px;
-  height: auto;
+  height: 406px;
   border-radius: 6px;
   object-fit: cover;
 }
 body #wrap #others {
   /* 🟥 윗줄 오른쪽 흐름 */
-}
-body #wrap #others .row-top {
-  animation: slideRight 25s linear infinite;
-}
-body #wrap #others {
+  /*             .row-top {
+                  animation: slideRight 25s linear infinite;
+              } */
   /* 🟦 아랫줄 왼쪽 흐름 */
-}
-body #wrap #others .row-bottom {
-  animation: slideLeft 25s linear infinite;
+  /*             .row-bottom {
+                  animation: slideLeft 25s linear infinite;
+              } */
 }
 @keyframes slideRight {
   0% {

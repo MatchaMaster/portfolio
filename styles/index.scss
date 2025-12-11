@@ -505,21 +505,21 @@ body {
         
                 img {
                     width: 260px;
-                    height: auto;
+                    height: 406px;
                     border-radius: 6px;
                     object-fit: cover;
                 }
             }
         
             /* 🟥 윗줄 오른쪽 흐름 */
-            .row-top {
+/*             .row-top {
                 animation: slideRight 25s linear infinite;
-            }
+            } */
         
             /* 🟦 아랫줄 왼쪽 흐름 */
-            .row-bottom {
+/*             .row-bottom {
                 animation: slideLeft 25s linear infinite;
-            }
+            } */
         
             @keyframes slideRight {
                 0% { transform: translateX(-50%); }
